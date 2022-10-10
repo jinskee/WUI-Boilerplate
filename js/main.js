@@ -50,6 +50,10 @@ function getData(){   //Put map in paranthesis?
         })
         .then(function(json){
             WuiCc = L.geoJson(json,{
+                onEachFeature:function(feature, layer){
+                    var popupContentCC = createPopupContentCC(feature);
+                    layer.bindPopup(popupContentCC)
+                }
 
             }).addTo(map)
 
@@ -115,4 +119,9 @@ function createPopupContent(feature){
         "</p><p><b>Cause:</b> " + feature.properties.Cause;
     return popupContent
 };
+function createPopupContentCC(feature){
+    var popupContentCC = "<p><b>Area:</b> " + feature.properties.name +
+        "</p><p><b>Acres of WUI:</b> " + feature.properties.Acres;
+    return popupContentCC
+}
 document.addEventListener('DOMContentLoaded', createMap)

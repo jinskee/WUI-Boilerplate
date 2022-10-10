@@ -70,7 +70,10 @@ function getDataTwo(){   //Put map in paranthesis?
         })
         .then(function(json){
             waterFall= L.geoJson(json,{
-
+                onEachFeature:function(feature, layer){
+                    var popupContent = createPopupContent(feature);
+                    layer.bindPopup(popupContent)
+                }
             }).addTo(map)
 
             //var attributes = processData(json);
@@ -102,5 +105,14 @@ function getDataThree(){   //Put map in paranthesis?
             //createSequenceControls(attributes);
             //createLegend(attributes);
         }) 
+};
+
+function createPopupContent(feature){
+    var popupContent = "<p><b>Fire:</b> " + feature.properties.INCDNT_NM +
+        "</p><p><b>Year:</b> " +feature.properties.Year +
+        "</p><p><b>Total Acres:</b> " + feature.properties.GIS_ACRES +
+        "</p><p><b>Structures Lost:</b> " + feature.properties.Homes +
+        "</p><p><b>Cause:</b> " + feature.properties.Cause;
+    return popupContent
 };
 document.addEventListener('DOMContentLoaded', createMap)

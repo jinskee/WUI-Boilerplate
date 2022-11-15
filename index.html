@@ -7,8 +7,11 @@
 
         <!--put your external stylesheet links here-->
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="dist/scrollmap.css">
         <link rel="stylesheet" href="lib/leaflet.css">
         <link rel="stylesheet" href="css/style.css">
+ 
+     
         <!--[if IE<9]>
             <link rel="stylesheet" href="css/style.ie.css">
         <![endif]-->
@@ -19,23 +22,133 @@
     </head>
 
     <body>
-        <div class = "content">
-            <div class = "row no-margin" id ="titleBackground">
-                <img src="img/pondo.png" id="forest">
-                <div class = "center">
-                    <p class = "titletext" id="first">How to Manage Wildfire and Living in the Wildland Urban Interface (WUI).</p>
-                    <p class = "titletext">Out of the approximately 140 million homes in the US, 43 million are located in the WUI</p>
-                    <p class = "titletext">Looking at the WUI and how to mitigate risks of coexisting with wildfire</p>
+        <div class="content">
+            <div class="row" style="background-image:url(img/wuiTitle.png)">
+                <div class="center title">
+                    <h1>Wildfire in the Wildland Urban Interface</h1>
+                    <p class="subtitle">And how to prepare for wildfire in the WUI</p>
+                    <p class="author">Joey Inskeep</p>
                 </div>
             </div>
         </div>
-        <div id="map"></div>
+        <div class="row">
+            <div class="left">
+                <p class="vert-center">What is the <b>Wildland Urban Interface</b> or <b>WUI?</b> And why is it important to understand
+                    the risks associated with living in the WUI?</p>
+            </div>
+            <div class="right">
+                <img class="fit" src="img/firstimg.png">
+            </div>
+        </div>
+        <div class="row">
+            <div class="left">
+                <img class="fit" src="img/secondimg.png">
+            </div>
+            <div class="right">
+                <p class="vert-center">The WUI is the zone of transition between unoccupied land and human development. It is the line, area 
+                    or zone where structures and other human development meet or intermingle with undeveloped wildland or vegetative fuels.</p>
+                <p>Continue scrolling to learn about past wildfires that have left destruction in their burn scar, and learn
+                    about the actions you can take to prepare your home and community from wildfire in the WUI.</p>    
+            </div>
+        </div>    
+        <!--<div class="content">
+            <div class="row" style="background-image:url(img/pondo.png)">
+                <div class="center title">
+                    <h1>The Wildland Urban Interface</h1>
+                    <p class="subtitle">How to prepare for wildfire in the WUI</p>
+                </div>
+            </div>
+        </div>
+        THIS IS THE ORIGINAL DESIGN, DO NOT NEED IF LIKE THE OTHER<div class = "content">
+            <div class = "row no-margin" id ="titleBackground">
+                <img src="img/pondo.png" id="forest">
+                <div class = "center">
+                    <p class = "firsttext" id="first">How to Manage Wildfire and Living in the Wildland Urban Interface (WUI).</p>
+                    <p class = "firsttext">Out of the approximately 140 million homes in the US, 43 million are located in the WUI</p>
+                    <p class = "firsttext">Looking at the WUI and how to mitigate risks of coexisting with wildfire</p> 
+                </div>
+            </div>
+        </div>-->
+        <!--<div id="map"></div>-->
+        <div class="scroll-container">
+            <!--div class="background-item"-->
+            <div class="background-item"> <!--style="background-image:url(img/fireBackground.png)"-->
+                <div class="vert-center"></div>
+            </div>
+            <div class = "foreground-item no-event">
+                <div class ="row">
+                    <div class="center background-transparent rounded" id = "background1">
+                        <p class="no-margin"><img src="img/wui_bargraph.png" id="houses">
+                        <p class="no-margin">Out of the approximately 140 million homes in the US, just over 40 million are located 
+                            in the Wildland Urban Interface.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="center background-transparent rounded" id="background2">
+                        <p class="no-margin"><img src="img/WF_bargraph.png" id="wildfires">
+                        <p class="no-margin">Wildfire severity happens on a somewhat cyclical basis, however with temperatures and drought 
+                            becoming more extreme, fire seasons are lasting longer. With more severe fire seasons, acres burned will potentially 
+                            increase as well.</p>
+                    </div>
+                </div>
+                <div class ="row">
+                    <div class="center background-transparent" id="background3">
+                        <p class="no-margin"><img src="img/Structures_bargraph.png" id="structures">
+                        <p class="no-margin">From 2010-2020, structures destroyed by wildfire increased, with the worst year being 2018 
+                            where nearly 25,000 structures were lost due to wildfire.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-container">
+            <div class="background-item" id="item1">
+                <div id="map" class="vert-center"></div>
+            </div>
+            <div class = "foreground-item no-event">
+                <div class ="row">
+                    <div class="center background-transparent rounded" id = "start">
+                        <p class="no-margin">The Waterfall fire burned 8 thousand acres and destroyed _ structures outside Carson City,
+                            and started in the cities designated Wildland Urban Interface Zone.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="center background-transparent rounded" id="block1">
+                        <p class="no-margin">The Bridger Foothills fire started from a lighting strike on the southwestern portion of the bridger mountain range,
+                            crossing over the ridge and burning north into bridger canyon, a major WUI zone with expensive homes.</p>
+                    </div>
+                </div>
+                <div class ="row">
+                    <div class="center background-transparent" id="block2">
+                        <p class="no-margin">The breachie creek fire was pushed with strong eastern winds and grew to be __ acres, destroying many structures
+                            in its wake.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="center">
+                <p class="vert-center">If you reside in the WUI, have a plan in place for when a wildfire starts in your community. Defensible space
+                    around your home may help protect it from going up in flames. An emergency action plan will allow you to evacuate quickly and efficiently,
+                    with the confidence that you have done everything in your power to save your home.</p>
+            </div>
+<!--            <div class="right">
+                <img class="fit" src="img/thirdimg.png">
+            </div>-->
+        </div>
+        <div class="row">
+            <div class="center">
+                <p class="vert-center">Provide description of defensible space here and link resources for more knowledge</p>
+            </div>
+        </div>
         <!--put your initial page content here-->
 
         <!--you can also use this space for internal scripts;
         place these within <script> tags-->
 
         <!--put your external script links here-->
+        <script type="text/javascript" src="dist/scrollmap.js"></script>
         <script type="text/javascript" src="lib/leaflet-src.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
     </body>

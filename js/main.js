@@ -11,11 +11,16 @@ var wuiMc;
 
 var bridgerFoothills;
 
-var breachieCreek
+var breachieCreek;
+
+var locations;
 
 
 //function to instantiate the leaflet map
 function createMap(){
+
+    //var satellite = L.tileLayer(mapboxUrl, {id: 'MapID', tileSize: 512, zoomOffset: -1, attribution: mapboxAttribution});
+    
     map = L.map('map', {
         center: [40, -100],
         zoom: 4,
@@ -30,10 +35,25 @@ function createMap(){
 
 
 //Add custom base tilelayer
+var googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+    maxZoom: 20,
+    subdomains:['mt0','mt1','mt2','mt3']
+}).addTo(map);
+
 var Stadia_AlidadeSmooth = L.tileLayer('https://api.mapbox.com/styles/v1/jinskeep/cl0im49qp000k15muijdwfann/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoiamluc2tlZXAiLCJhIjoiY2wwaWhwZWIwMDJxODNvb3Q1Mm1zMzJwMyJ9.YJAm8B6G0iBkf0wIiCKSfA', {
     maxZoom: 20,
     attribution: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
 }).addTo(map);
+
+
+
+var baseMaps = {
+   
+   'Satellite': googleSat,
+   'Hill Shade': Stadia_AlidadeSmooth,
+}
+
+L.control.layers(baseMaps).addTo(map);
 
 
 //call the getData function
@@ -72,7 +92,105 @@ function getData(){   //Put map in paranthesis?
             //createSequenceControls(attributes);
             //createLegend(attributes);
         }) 
-};     
+}; 
+
+var fly= [
+    {
+        id: "start",
+        location:[39.16,-119.77],
+        zoom: 11 //change zoom if not close enough
+    },
+    {
+        id: "block1",
+        location:[45.68, -111.03],
+        zoom: 11
+    },
+    {
+        id: "block2",
+        location:[44.93, -122.65],
+        zoom: 9
+    }
+];
+
+function scroll(){
+    fly.forEach(function(item){
+        isInPosition(item.id, item.location, item.zoom)
+    });
+};
+
+function isInPosition(id, location, zoom){
+    var block1 = document.getElementById(id);
+    var rect = block1.getBoundingClientRect();
+    var block2 = document.getElementById(id);
+    var rect2 = block2.getBoundingClientRect();
+    y = rect.top;
+    x = rect2.top;
+
+    var topMargin = window.innerHeight / 2;
+
+    if ((y-topMargin) < 0 && y > 0){
+     map.flyTo(location, zoom, {
+        animate: true,
+        duration: 2
+     });
+
+    };
+
+};
+
+// GETTING SCROLLING STORY TO WORK 
+/*function zoomLocate() {
+    var latitudeCC = 39.16
+    var longitudeCC = -119.77
+    featuredAreas = createArray(latitudeCC, longitudeCC);
+    scrollLocation(null, locations);
+}; 
+
+function createArray (latitudeCC, longitudeCC){
+    var fire = [
+        {
+            id: "carsonCity",
+            location:[latitudeCC, longitudeCC],
+            zoom: 7
+        },
+        {
+            id: "bozemanMontana",
+            location:[45.68, 111.03],
+            zoom: 7
+        },
+        {
+            id: "breachieCreek",
+            location:[44.93, -122.65],
+            zoom:7,
+        }
+    ];
+    return fire;
+};
+
+function scrollLocation(){
+    locations.forEach(function(item){
+        locatorIsInPosition(item.id, item.location, item.zoom)
+    });
+};
+
+function locatorIsInPosition (id, location, zoom) {
+
+    var locText = document.getElementById(id);
+    var rect = locText.getBoundingClientRect();
+    y = rect.top;
+
+    var topMargin = window.innerHeight / 2;
+
+    if ((y-topMargin) < 0 && y > 0) {
+        map.flyTo(location, zoom, {
+            animate: true,
+            duration: 2
+    
+        });
+
+    }
+
+} */
 function getDataTwo(){   //Put map in paranthesis?
     //load the data
     fetch("data/waterfall.geojson")
@@ -86,6 +204,7 @@ function getDataTwo(){   //Put map in paranthesis?
                     layer.bindPopup(popupContent)
                 }
             }).addTo(map)
+            waterFall.setStyle(style)
 
             //var attributes = processData(json);
             //calcStats(json)
@@ -131,6 +250,7 @@ function getDataFour(){   //Put map in paranthesis?
                     layer.bindPopup(popupContentBFH)
                 }
             }).addTo(map)
+            bridgerFoothills.setStyle(style);
 
             //var attributes = processData(json);
             //calcStats(json)
@@ -153,10 +273,12 @@ function getDataFive(){   //Put map in paranthesis?
                 onEachFeature:function(feature, layer){
                     var popupContentBCF = createPopupContentBCF(feature);
                     layer.bindPopup(popupContentBCF)
-                }
+                },
+
+                //pointToLayer: pointToLayer
                 
             }).addTo(map)
-
+            breachieCreek.setStyle(style);
             //var attributes = processData(json);
             //calcStats(json)
             //create marker options
@@ -198,4 +320,30 @@ function createPopupContentBCF(feature){
 return popupContentBCF
 };
 
+function style(){
+    return {
+        fillOpacity: 0.5,
+        fillColor: "#f8961e",
+        color: "#f8961e"
+
+    }
+}
+
+
+
+
+/*function pointToLayer(feature, latlng){
+
+    var options = {
+        color: "#FFA500",
+        opacity: 1,
+        fillOpacity: 0.5
+    };
+
+    var layer = L.circleMarker(latlng, options)
+
+    return layer;
+};*/
 document.addEventListener('DOMContentLoaded', createMap)
+//document.addEventListener('DOMContentLoaded', zoomLocate)
+document.addEventListener('scroll', scroll)

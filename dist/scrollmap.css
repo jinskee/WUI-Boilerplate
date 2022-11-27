@@ -8,8 +8,8 @@ body{
 
 /*background/foreground*/
 .background-item{
-    width:100%;
-    height:86vh;
+    width:99%;
+    height:95vh;
     z-index:0;
     position:sticky;
     display:block;
@@ -98,11 +98,11 @@ body{
     border-radius:10%;
 }
 .background-white{
-    background-color:rgba(63, 63, 63, 0.9);
+    background-color:rgba(193, 5, 5, 0.9);
     padding:20px;
 }
 .background-transparent{
-    background-color:rgba(63, 63, 63, 0.90);
+    background-color:rgba(144, 28, 28, 0.9);
     padding:20px;
 }
 

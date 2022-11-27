@@ -60,7 +60,7 @@ L.control.layers(baseMaps).addTo(map);
 
 getData(); 
 getDataTwo();
-getDataThree();//COMMMMMMMMEINTED OUT
+getDataThree();
 getDataFour(); 
 getDataFive();
 };
@@ -83,14 +83,9 @@ function getData(){   //Put map in paranthesis?
                 
 
             }).addTo(map)
+            WuiCc.setStyle(styleWUI)
 
-            //var attributes = processData(json);
-            //calcStats(json)
-            //create marker options
-            //callfunction to create proportional symbols
-            //createPropSymbols(json, attributes);
-            //createSequenceControls(attributes);
-            //createLegend(attributes);
+
         }) 
 }; 
 
@@ -138,59 +133,7 @@ function isInPosition(id, location, zoom){
 
 };
 
-// GETTING SCROLLING STORY TO WORK 
-/*function zoomLocate() {
-    var latitudeCC = 39.16
-    var longitudeCC = -119.77
-    featuredAreas = createArray(latitudeCC, longitudeCC);
-    scrollLocation(null, locations);
-}; 
 
-function createArray (latitudeCC, longitudeCC){
-    var fire = [
-        {
-            id: "carsonCity",
-            location:[latitudeCC, longitudeCC],
-            zoom: 7
-        },
-        {
-            id: "bozemanMontana",
-            location:[45.68, 111.03],
-            zoom: 7
-        },
-        {
-            id: "breachieCreek",
-            location:[44.93, -122.65],
-            zoom:7,
-        }
-    ];
-    return fire;
-};
-
-function scrollLocation(){
-    locations.forEach(function(item){
-        locatorIsInPosition(item.id, item.location, item.zoom)
-    });
-};
-
-function locatorIsInPosition (id, location, zoom) {
-
-    var locText = document.getElementById(id);
-    var rect = locText.getBoundingClientRect();
-    y = rect.top;
-
-    var topMargin = window.innerHeight / 2;
-
-    if ((y-topMargin) < 0 && y > 0) {
-        map.flyTo(location, zoom, {
-            animate: true,
-            duration: 2
-    
-        });
-
-    }
-
-} */
 function getDataTwo(){   //Put map in paranthesis?
     //load the data
     fetch("data/waterfall.geojson")
@@ -205,14 +148,6 @@ function getDataTwo(){   //Put map in paranthesis?
                 }
             }).addTo(map)
             waterFall.setStyle(style)
-
-            //var attributes = processData(json);
-            //calcStats(json)
-            //create marker options
-            //callfunction to create proportional symbols
-            //createPropSymbols(json, attributes);
-            //createSequenceControls(attributes);
-            //createLegend(attributes);
         }) 
 };
 
@@ -226,14 +161,6 @@ function getDataThree(){   //Put map in paranthesis?
             wuiMc= L.geoJson(json,{
 
             }).addTo(map)
-
-            //var attributes = processData(json);
-            //calcStats(json)
-            //create marker options
-            //callfunction to create proportional symbols
-            //createPropSymbols(json, attributes);
-            //createSequenceControls(attributes);
-            //createLegend(attributes);
         }) 
 };
 
@@ -252,17 +179,11 @@ function getDataFour(){   //Put map in paranthesis?
             }).addTo(map)
             bridgerFoothills.setStyle(style);
 
-            //var attributes = processData(json);
-            //calcStats(json)
-            //create marker options
-            //callfunction to create proportional symbols
-            //createPropSymbols(json, attributes);
-            //createSequenceControls(attributes);
-            //createLegend(attributes);
+
         }) 
 };
 
-function getDataFive(){   //Put map in paranthesis?
+function getDataFive(){   
     //load the data
     fetch("data/breachieCreek.geojson")
         .then(function(response){
@@ -274,18 +195,9 @@ function getDataFive(){   //Put map in paranthesis?
                     var popupContentBCF = createPopupContentBCF(feature);
                     layer.bindPopup(popupContentBCF)
                 },
-
-                //pointToLayer: pointToLayer
                 
             }).addTo(map)
             breachieCreek.setStyle(style);
-            //var attributes = processData(json);
-            //calcStats(json)
-            //create marker options
-            //callfunction to create proportional symbols
-            //createPropSymbols(json, attributes);
-            //createSequenceControls(attributes);
-            //createLegend(attributes);
         }) 
 };
 
@@ -329,21 +241,18 @@ function style(){
     }
 }
 
+function styleWUI(){
+    return {
+        fillOpacity: 0.4,
+        fillColor: "2F4F4",
+        color: "2F4F4"
+    }
+    
+}
 
 
 
-/*function pointToLayer(feature, latlng){
 
-    var options = {
-        color: "#FFA500",
-        opacity: 1,
-        fillOpacity: 0.5
-    };
-
-    var layer = L.circleMarker(latlng, options)
-
-    return layer;
-};*/
 document.addEventListener('DOMContentLoaded', createMap)
 //document.addEventListener('DOMContentLoaded', zoomLocate)
 document.addEventListener('scroll', scroll)

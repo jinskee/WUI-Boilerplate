@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="dist/scrollmap.css">
         <link rel="stylesheet" href="lib/leaflet.css">
         <link rel="stylesheet" href="css/style.css">
+
  
      
         <!--[if IE<9]>
@@ -25,16 +26,18 @@
         <div class="content">
             <div class="row" style="background-image:url(img/wuiTitle.png)">
                 <div class="center title">
-                    <h1>Wildfire in the Wildland Urban Interface</h1>
-                    <p class="subtitle">And how to prepare for wildfire in the WUI</p>
+                    <h1>The Wildland Urban Interface</h1>
+                    <p class="subtitle">And how to prepare for wildfire</p>
                     <p class="author">Joey Inskeep</p>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="left">
-                <p class="vert-center">What is the <b>Wildland Urban Interface</b> or <b>WUI?</b> And why is it important to understand
-                    the risks associated with living in the WUI?</p>
+                <p class="vert-center">The <b>Wildland Urban Interface</b> or <b>WUI</b> is the zone of transition between unoccupied land and human development. It is the line, area 
+                    or zone where structures and other human development meet or intermingle with undeveloped wildland or vegetative fuels.
+                    Continue scrolling to learn more about the WUI, the dangers of Wildfire and 
+                    how to mitigate the risk of wildfire for your home and in your community. </p>
             </div>
             <div class="right">
                 <img class="fit" src="img/firstimg.png">
@@ -45,10 +48,10 @@
                 <img class="fit" src="img/secondimg.png">
             </div>
             <div class="right">
-                <p class="vert-center">The WUI is the zone of transition between unoccupied land and human development. It is the line, area 
-                    or zone where structures and other human development meet or intermingle with undeveloped wildland or vegetative fuels.</p>
-                <p>Continue scrolling to learn about past wildfires that have left destruction in their burn scar, and learn
-                    about the actions you can take to prepare your home and community from wildfire in the WUI.</p>    
+                <p class="vert-center">Every year, thousands of homes in the WUI are destroyed by wildfire. Fire behavior has the potential to be extreme, with high temps, low relative humidity and windy conditions all factoring into growth potential. 
+                    Creating defensible space around your home, and having an emergency plan in place, allows for better odds of saving your home or yourself should a wildfire start in your community. 
+                    Keep scrolling as we explore some case studies of previous fires in the WUI and outline some key actions to take to mitigate risk from wildfire. 
+                </p>    
             </div>
         </div>    
         <!--<div class="content">
@@ -72,7 +75,7 @@
         <!--<div id="map"></div>-->
         <div class="scroll-container">
             <!--div class="background-item"-->
-            <div class="background-item"> <!--style="background-image:url(img/fireBackground.png)"-->
+            <div class="background-item" style="background-image:url(img/treesFlame.png)">
                 <div class="vert-center"></div>
             </div>
             <div class = "foreground-item no-event">
@@ -80,22 +83,22 @@
                     <div class="center background-transparent rounded" id = "background1">
                         <p class="no-margin"><img src="img/wui_bargraph.png" id="houses">
                         <p class="no-margin">Out of the approximately 140 million homes in the US, just over 40 million are located 
-                            in the Wildland Urban Interface.</p>
+                            in the Wildland Urban Interface. Each year 3,000 more homes are built in the WUI.</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="center background-transparent rounded" id="background2">
                         <p class="no-margin"><img src="img/WF_bargraph.png" id="wildfires">
-                        <p class="no-margin">Wildfire severity happens on a somewhat cyclical basis, however with temperatures and drought 
-                            becoming more extreme, fire seasons are lasting longer. With more severe fire seasons, acres burned will potentially 
-                            increase as well.</p>
+                        <p class="no-margin">Wildfire severity happens on a cyclical basis, however with temperatures and drought 
+                            becoming more extreme, fire seasons are lasting longer. With more severe fire seasons, acres burned will
+                            increase as well. With more homes moving into the WUI, the need for awareness rises.</p>
                     </div>
                 </div>
                 <div class ="row">
                     <div class="center background-transparent" id="background3">
                         <p class="no-margin"><img src="img/Structures_bargraph.png" id="structures">
                         <p class="no-margin">From 2010-2020, structures destroyed by wildfire increased, with the worst year being 2018 
-                            where nearly 25,000 structures were lost due to wildfire.</p>
+                            where nearly 25,000 structures were lost due to wildfire. Without action, this trend will continue. Keep yourself safe by always being prepared.</p>
                     </div>
                 </div>
             </div>
@@ -108,30 +111,62 @@
             <div class = "foreground-item no-event">
                 <div class ="row">
                     <div class="center background-transparent rounded" id = "start">
-                        <p class="no-margin">The Waterfall fire burned 8 thousand acres and destroyed _ structures outside Carson City,
-                            and started in the cities designated Wildland Urban Interface Zone.</p>
+                        <p class="no-margin">The Waterfall fire burned 8,700 acres and destroyed 18 structures outside Carson City,
+                            and started from a rogue campfire in the cities designated WUI Zone. Prior to the fire starting, prolonged drought had occured resulting in very low fuel moistures, resulting in a haines index of 5, meaning a high potential for large fire growth.</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="center background-transparent rounded" id="block1">
-                        <p class="no-margin">The Bridger Foothills fire started from a lighting strike on the southwestern portion of the bridger mountain range,
-                            crossing over the ridge and burning north into bridger canyon, a major WUI zone with expensive homes.</p>
-                    </div>
+                        <p class="no-margin">The Bridger Foothills fire started from a lighting strike on the southwestern portion of the bridger mountain range, in the outskirts of Bozeman, MT.
+                            The fire crossed over the ridge and burnt north and east into bridger canyon due to high temps, low humidity, and high winds. The fire grew to over 8,000 acres in a matter of two days and destroyed 68 structures, 30 of which were homes.</p>                   </div>
                 </div>
                 <div class ="row">
                     <div class="center background-transparent" id="block2">
-                        <p class="no-margin">The breachie creek fire was pushed with strong eastern winds and grew to be __ acres, destroying many structures
-                            in its wake.</p>
+                        <p class="no-margin">The breachie creek fire burned on a steep slope in dense forest for roughly three weeks, staying under 500 acres. On September 7th rare summer easterly winds reached 50-75 miles per hour, allowing the fire to reach over 130,000 acres in one night. Thousands of structures were destroyed in its wake.</p>
                     </div>
                 </div>
             </div>
         </div>
         
         <div class="row">
-            <div class="center">
-                <p class="vert-center">If you reside in the WUI, have a plan in place for when a wildfire starts in your community. Defensible space
+            <div class="center-wide">
+                <p>If you reside in the WUI, have a plan in place for when a wildfire starts in your community. Defensible space
                     around your home may help protect it from going up in flames. An emergency action plan will allow you to evacuate quickly and efficiently,
                     with the confidence that you have done everything in your power to save your home.</p>
+                <div id="carousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/caro1.png" class="w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/caro2.png" class="w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/caro3.png" class="w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/caro4.png" class="w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/caro5.png" class="w-100" alt="...">
+                        </div>
+                    </div>
+                    <button id="prev-button" class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button id="next-button" class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
 <!--            <div class="right">
                 <img class="fit" src="img/thirdimg.png">
@@ -149,6 +184,7 @@
 
         <!--put your external script links here-->
         <script type="text/javascript" src="dist/scrollmap.js"></script>
+        <script type="text/javascript" src="lib/bootstrap.min.js"></script>
         <script type="text/javascript" src="lib/leaflet-src.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
     </body>

@@ -1,14 +1,11 @@
 /*Add CSS styles here*/
 
 
-/*html {
-    background-color: #0c1427;
-}*/
 
 body, html {
     background-color:rgb(246, 248, 225);
     margin: 0;
-    font-family: 'EB Garamond', serif;
+    font-family: 'Georgia', serif;
 }
 
 .foreground-item{
@@ -40,7 +37,7 @@ body, html {
     object-fit: cover;
 }
 
-#firts{
+#first{
     position: relative;
     color: #fd652d;
     margin-top: 50%;

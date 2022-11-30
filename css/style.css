@@ -8,6 +8,11 @@ body, html {
     font-family: 'Georgia', serif;
 }
 
+.vert-center {
+    font-family: 'Georgia', serif;
+    font-size: large;
+}
+
 .foreground-item{
     font-size: 1.45em;
 }
